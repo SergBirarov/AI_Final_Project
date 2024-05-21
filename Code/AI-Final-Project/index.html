@@ -11,6 +11,30 @@
     <script type="module" src="./scripts/main.js"></script>
     
   </head>
-  <body id="root">
+  <body id="body">
+    <div class="container">
+      <h1 class="display-1 text-center">Brain.js Project</h1>
+      <div class="row">
+        <div class="col">
+          <h2>Example Data</h2>
+          <pre id="exampleData"></pre>
+        </div>
+        <div class="col">
+          <h2>Provided Testing Data</h2>
+          <pre id="testingData"></pre>
+        </div>
+        <div class="col">
+          <h2>Predictions</h2>
+          <pre id="predictions"></pre>
+        </div>
+        <div class="col">
+          <h2 class="text-center">Operating The Model</h2>
+          <h3>Train Model</h3>
+          <button id="trainButton" class="btn btn-primary w-100 my-2 ">Train Model</button>
+          <h3>Test Model</h3>
+          <button id="startButton" class="btn btn-primary w-100 my-2">Start Predictions</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

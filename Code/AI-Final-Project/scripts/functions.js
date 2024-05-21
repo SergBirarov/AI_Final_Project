@@ -3,7 +3,7 @@
 function CreateNeuralNetwork(input, output, layers, activation) {
   let net = new brain.NeuralNetwork({
     binaryThresh: 0.005,
-    iterations: 30000,
+    iterations: 20000,
     hiddenLayers: layers,
     inputSize: input,
     activation: activation,
@@ -40,6 +40,16 @@ function CreateTrainingData(data) {
   });
 }
 
+function CreateLstmData(data) {
+  return data.map((item) => {
+    const input = {input: item.input};
+    const output = {output: item.output};
+    return {input, output};
+  });
+  };
+
+
+
 function CreateTestData(data) {
   return data.map((item) => {
     const gender = item.gender === "male" ? 0 : 1;
@@ -74,36 +84,6 @@ function PredictNeuralNetwork(net, input) {
   return net.run(input);
 }
 
-// Train the neural network
-// TrainNeuralNetwork(net, trainData2);
-// TrainNeuralNetwork(net, trainData3);
-
-// Predict the test data
-// const predictions = testData1.map((item) =>
-//   PredictNeuralNetwork(net, [
-//     item.gender === "male" ? 0 : 1,
-//     ["A", "B", "C", "D", "E"].indexOf(item.race_ethnicity) + 1,
-//     {
-//       "high school": 0,
-//       "associate's degree": 1,
-//       "master's degree": 2,
-//       "some college": 3,
-//       "bachelor's degree": 4,
-//     }[item.parental_level_of_education.toLowerCase()],
-//     item.lunch === "free/reduced" ? 0 : 1,
-//     item.test_preparation_course === "none" ? false : true,
-//   ])
-// );
-
-// console.log(predictions);
-
-// Export Statements
-
-
-function setUpScreen(screenSetup) {
-  let body = document.querySelector("body");
-  body.innerHTML += {screenSetup};
-}
 
 
 export {
@@ -112,5 +92,6 @@ export {
   TrainNeuralNetwork,
   PredictNeuralNetwork,
   CreateTestData,
+  CreateLstmData,
 };
 
