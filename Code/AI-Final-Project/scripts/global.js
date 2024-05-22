@@ -1,8 +1,8 @@
 export const data1 = [
   {
-    gender: "female",
-    race_ethnicity: "group B",
-    parental_level_of_education: "bachelor's degree",
+    gender: "1",
+    race_ethnicity: "2",
+    parental_level_of_education: "4",
     lunch: "standard",
     test_preparation_course: "none",
     math_score: 72,
@@ -9327,7 +9327,8 @@ export const dataDisp = [
 
 
 export const dataForLstm = [
-  // Cooking
+  
+  //Cooking
   { input: "Preheat the oven to 350 degrees Fahrenheit.", output: "cooking" },
   {
     input:

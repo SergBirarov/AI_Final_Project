@@ -1,4 +1,6 @@
 
+
+//5, 3, [20, 20, 20], "sigmoid"
 // Function Definitions
 function CreateNeuralNetwork(input, output, layers, activation) {
   let net = new brain.NeuralNetwork({
